@@ -1,5 +1,3 @@
-// login
-
 const getMoviesFromApi = () => {
   console.log('Se están pidiendo las películas de la app');
   // CAMBIA ESTE FETCH PARA QUE APUNTE A UN ENDPOINT DE TU SERVIDOR, PIENSA SI DEBE SER GET O POST, PIENSA QUÉ DATOS DEBES ENVIAR, ETC
@@ -12,5 +10,4 @@ const getMoviesFromApi = () => {
 const objToExport = {
   getMoviesFromApi: getMoviesFromApi
 };
-
 export default objToExport;
