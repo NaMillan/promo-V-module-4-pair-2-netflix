@@ -12,10 +12,11 @@ async function getConnection() {
   const connection= await mysql.createConnection({
 host:'localhost',
 user:'root',
-password:'MiranDa01*', 
-database:'netflix'
+password:'root', 
+database:'netflix',
+port: '/var/run/mysqld/mysqld.sock'
   });
-  await connection.connect ();
+  await connection.connect();
   return connection;
 }
 
@@ -30,10 +31,9 @@ server.listen(serverPort, () => {
 server.get  ('/api/movies', async (req,res) => {
   const conex= await getConnection();
   const sql= 'SELECT * FROM movies';
-  const [results,fields]= await conex.query (sql);
+  const [results]= await conex.query(sql);
   console.log (results);
-  console.log (fields);
-  conex.end();
+  //conex.end();
   res.json({success:true, movies:results });
 });
 
