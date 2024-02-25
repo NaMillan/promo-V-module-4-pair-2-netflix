@@ -6,13 +6,13 @@ const mysql = require('mysql2/promise');
 const server = express();
 server.use(cors());
 server.use(express.json());
-// require('dotenv').config();
+require('dotenv').config();
 
 async function getConnection() {
   const connection= await mysql.createConnection({
 host:'localhost',
-user:'root',
-password:'9308', 
+user:process.env.USER_DB,
+password:process.env.USERPASS, 
 database:'netflix'
   });
   await connection.connect ();
