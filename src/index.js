@@ -6,7 +6,7 @@ const mysql = require('mysql2/promise');
 const server = express();
 server.use(cors());
 server.use(express.json());
-// require('dotenv').config();
+require('dotenv').config();
 
 async function getConnection() {
   const connection= await mysql.createConnection({
@@ -14,7 +14,6 @@ host:'localhost',
 user:'root',
 password:'root', 
 database:'netflix',
-port: '/var/run/mysqld/mysqld.sock'
   });
   await connection.connect();
   return connection;
