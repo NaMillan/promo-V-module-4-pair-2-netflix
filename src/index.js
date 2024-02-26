@@ -11,8 +11,8 @@ require('dotenv').config();
 async function getConnection() {
   const connection= await mysql.createConnection({
 host:'localhost',
-user:'root',
-password:'root', 
+user: proccess.env.USER_DB,
+password: process.env.USERPASS, 
 database:'netflix',
   });
   await connection.connect();
