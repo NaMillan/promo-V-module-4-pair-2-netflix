@@ -41,6 +41,7 @@ const staticServer ="./src/public-react";
 server.use(express.static(staticServer));
 
 
+
 //crear endpoints -->  CRUD DE LA BD
 // server.get('/api/movies', async (req, res) => {
 //   const { genre, sort } = req.query;
